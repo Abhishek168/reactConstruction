@@ -34,7 +34,7 @@ const Basic = () => {
 						</li>
 						<li><a className="nav-link scrollto" href="#contact">Contact</a></li>
 					</ul>
-					<i class="fa fa-bars" aria-hidden="true"></i>
+					<i className="bi bi-list mobile-nav-toggle"></i>
 				</nav>
 
 			</div>

@@ -1614,7 +1614,24 @@ section {
 		display: block;
 		background-color: red;
 	}
-	
+
+	/* nav{
+		display: none;
+	}
+	nav.show{
+		display: none;
+	} */
+}
+
+.navbar i {
+	display: none;
+}
+
+@media (max-width:991px) {
+	.navbar i {
+		display: block;
+	}
+
 	/* nav{
 		display: none;
 	}

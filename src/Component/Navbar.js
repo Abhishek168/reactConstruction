@@ -3,7 +3,6 @@ const Navbar = () => {
 		let navbar = document.getElementById('nav');
     console.log("🚀 ~ file: Navbar.js ~ line 4 ~ myFuntion ~ navbar", navbar)
 		navbar.classList.toggle('show');
-		// console.log("Hello buesdsaddsa")
 	}
 	return (<>
 		<header>
