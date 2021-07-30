@@ -1,3 +1,13 @@
+/**
+* Template Name: Selecao - v4.3.0
+* Template URL: https://bootstrapmade.com/selecao-bootstrap-template/
+* Author: BootstrapMade.com
+* License: https://bootstrapmade.com/license/
+*/
+
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
 body {
 	font-family: "Open Sans", sans-serif;
 	color: #444444;
@@ -1606,36 +1616,4 @@ section {
 
 #footer .credits {
 	font-size: 13px;
-}
-
-
-@media (max-width:991px) {
-	.fa fa-bars {
-		display: block;
-		background-color: red;
-	}
-
-	/* nav{
-		display: none;
-	}
-	nav.show{
-		display: none;
-	} */
-}
-
-.navbar i {
-	display: none;
-}
-
-@media (max-width:991px) {
-	.navbar i {
-		display: block;
-	}
-
-	/* nav{
-		display: none;
-	}
-	nav.show{
-		display: none;
-	} */
 }
