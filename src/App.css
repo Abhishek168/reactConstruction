@@ -86,7 +86,7 @@ h6 {
 }
 
 #header.header-transparent {
-	background: transparent;
+	/* background: transparent; */
 }
 
 #header.header-scrolled {
