@@ -1,5 +1,42 @@
+import { useState } from "react";
+
 import features1 from "../assets/img/features1.png";
+import features2 from "../assets/img/features2.png";
+import features3 from "../assets/img/features3.png";
+import features4 from "../assets/img/features4.png";
+
+import team1 from "../assets/img/team/team1.jpg";
+import team2 from "../assets/img/team/team2.jpg";
+import team3 from "../assets/img/team/team3.jpg";
+import team4 from "../assets/img/team/team4.jpg";
+
+import portfolio1 from "../assets/img/portfolio/portfolio1.jpg";
+import portfolio2 from "../assets/img/portfolio/portfolio2.jpg";
+import portfolio3 from "../assets/img/portfolio/portfolio3.jpg";
+import portfolio4 from "../assets/img/portfolio/portfolio4.jpg";
+import portfolio5 from "../assets/img/portfolio/portfolio5.jpg";
+import portfolio6 from "../assets/img/portfolio/portfolio6.jpg";
+import portfolio7 from "../assets/img/portfolio/portfolio7.jpg";
+import portfolio8 from "../assets/img/portfolio/portfolio8.jpg";
+import portfolio9 from "../assets/img/portfolio/portfolio9.jpg";
+
+import testimonials1 from "../assets/img/testimonials/testimonials1.jpg";
+import testimonials2 from "../assets/img/testimonials/testimonials2.jpg";
+import testimonials3 from "../assets/img/testimonials/testimonials3.jpg";
+import testimonials4 from "../assets/img/testimonials/testimonials4.jpg";
+import testimonials5 from "../assets/img/testimonials/testimonials5.jpg";
+
 const Basic = () => {
+	const [open, setOpen] = useState(false);
+
+	function myFuntion() {
+		setOpen(!open);
+	}
+
+	const handleNavItemClick = () => {
+		setOpen(false);
+	}
+
 	return (<>
 		<header id="header" className="fixed-top d-flex align-items-center  header-transparent ">
 			<div className="container d-flex align-items-center justify-content-between">
@@ -7,15 +44,16 @@ const Basic = () => {
 					<h1><a href="index.html">Selecao</a></h1>
 				</div>
 
-				<nav id="navbar" className="navbar">
+				<nav id="navbar" className={`navbar${open ? ' navbar-mobile' : ''}`}>
 					<ul>
-						<li><a className="nav-link scrollto active" href="#hero">Home</a></li>
-						<li><a className="nav-link scrollto" href="#about">About</a></li>
-						<li><a className="nav-link scrollto" href="#services">Services</a></li>
-						<li><a className="nav-link scrollto " href="#portfolio">Portfolio</a></li>
-						<li><a className="nav-link scrollto" href="#pricing">Pricing</a></li>
-						<li><a className="nav-link scrollto" href="#team">Team</a></li>
-						<li className="dropdown"><a href="#"><span>Drop Down</span> <i className="bi bi-chevron-down"></i></a>
+						<li onClick={handleNavItemClick}><a className="nav-link scrollto" href="#hero">Home</a></li>
+						<li onClick={handleNavItemClick}><a className="nav-link scrollto" href="#about">About</a></li>
+						<li onClick={handleNavItemClick}><a className="nav-link scrollto" href="#services">Services</a></li>
+						<li onClick={handleNavItemClick}><a className="nav-link scrollto" href="#portfolio">Portfolio</a></li>
+						<li onClick={handleNavItemClick}><a className="nav-link scrollto" href="#pricing">Pricing</a></li>
+						<li onClick={handleNavItemClick}><a className="nav-link scrollto" href="#team">Team</a></li>
+						<li className="dropdown"><a href="#"><span>Drop Down</span>
+							<i className="bi bi-chevron-down"></i></a>
 							<ul>
 								<li><a href="#">Drop Down 1</a></li>
 								<li className="dropdown"><a href="#"><span>Deep Drop Down</span> <i className="bi bi-chevron-right"></i></a>
@@ -34,7 +72,7 @@ const Basic = () => {
 						</li>
 						<li><a className="nav-link scrollto" href="#contact">Contact</a></li>
 					</ul>
-					<i className="bi bi-list mobile-nav-toggle"></i>
+					<i className={`bi ${open ? 'bi-x' : 'bi-list'} mobile-nav-toggle`} onClick={myFuntion}></i>
 				</nav>
 
 			</div>
@@ -77,20 +115,20 @@ const Basic = () => {
 
 			</div>
 
-			{/* <svg className="hero-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28 " preserveAspectRatio="none" >
-      <defs>
-        <path id="wave-path" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z">
-      </defs>
-      <g className="wave1">
-        <use xlink:href="#wave-path" x="50" y="3" fill="rgba(255,255,255, .1)">
-      </g>
-      <g className="wave2">
-        <use xlink:href="#wave-path" x="50" y="0" fill="rgba(255,255,255, .2)">
-      </g>
-      <g className="wave3">
-        <use xlink:href="#wave-path" x="50" y="9" fill="#fff">
-      </g>
-    </svg> */}
+			<svg className="hero-waves" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28 " preserveAspectRatio="none" >
+				<defs>
+					<path id="wave-path" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+				</defs>
+				<g className="wave1">
+					<use xlinkHref="#wave-path" x="50" y="3" fill="rgba(255,255,255, .1)" />
+				</g>
+				<g className="wave2">
+					<use xlinkHref="#wave-path" x="50" y="0" fill="rgba(255,255,255, .2)" />
+				</g>
+				<g className="wave3">
+					<use xlinkHref="#wave-path" x="50" y="9" fill="#fff" />
+				</g>
+			</svg>
 
 		</section>
 
@@ -206,7 +244,7 @@ const Basic = () => {
 									</ul>
 								</div>
 								<div className="col-lg-6 order-1 order-lg-2 text-center">
-									<img src="assets/img/features-2.png" alt="" className="img-fluid" />
+									<img src={features2} alt="" className="img-fluid" />
 								</div>
 							</div>
 						</div>
@@ -230,7 +268,7 @@ const Basic = () => {
 									</p>
 								</div>
 								<div className="col-lg-6 order-1 order-lg-2 text-center">
-									<img src="assets/img/features-3.png" alt="" className="img-fluid" />
+									<img src={features3} alt="" className="img-fluid" />
 								</div>
 							</div>
 						</div>
@@ -254,7 +292,7 @@ const Basic = () => {
 									</ul>
 								</div>
 								<div className="col-lg-6 order-1 order-lg-2 text-center">
-									<img src="assets/img/features-4.png" alt="" className="img-fluid" />
+									<img src={features4} alt="" className="img-fluid" />
 								</div>
 							</div>
 						</div>
@@ -355,91 +393,91 @@ const Basic = () => {
 					<div className="row portfolio-container" data-aos="fade-up">
 
 						<div className="col-lg-4 col-md-6 portfolio-item filter-app">
-							<div className="portfolio-img"><img src="assets/img/portfolio/portfolio-1.jpg" className="img-fluid" alt="" /></div>
+							<div className="portfolio-img"><img src={portfolio1} className="img-fluid" alt="" /></div>
 							<div className="portfolio-info">
 								<h4>App 1</h4>
 								<p>App</p>
-								<a href="assets/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery" className="portfolio-lightbox preview-link" title="App 1"><i className="bx bx-plus"></i></a>
+								<a href={portfolio1} data-gallery="portfolioGallery" className="portfolio-lightbox preview-link" title="App 1"><i className="bx bx-plus"></i></a>
 								<a href="portfolio-details.html" className="details-link" title="More Details"><i className="bx bx-link"></i></a>
 							</div>
 						</div>
 
 						<div className="col-lg-4 col-md-6 portfolio-item filter-web">
-							<div className="portfolio-img"><img src="assets/img/portfolio/portfolio-2.jpg" className="img-fluid" alt="" /></div>
+							<div className="portfolio-img"><img src={portfolio2} className="img-fluid" alt="" /></div>
 							<div className="portfolio-info">
 								<h4>Web 3</h4>
 								<p>Web</p>
-								<a href="assets/img/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery" className="portfolio-lightbox preview-link" title="Web 3"><i className="bx bx-plus"></i></a>
+								<a href={portfolio2} data-gallery="portfolioGallery" className="portfolio-lightbox preview-link" title="Web 3"><i className="bx bx-plus"></i></a>
 								<a href="portfolio-details.html" className="details-link" title="More Details"><i className="bx bx-link"></i></a>
 							</div>
 						</div>
 
 						<div className="col-lg-4 col-md-6 portfolio-item filter-app">
-							<div className="portfolio-img"><img src="assets/img/portfolio/portfolio-3.jpg" className="img-fluid" alt="" /></div>
+							<div className="portfolio-img"><img src={portfolio3} className="img-fluid" alt="" /></div>
 							<div className="portfolio-info">
 								<h4>App 2</h4>
 								<p>App</p>
-								<a href="assets/img/portfolio/portfolio-3.jpg" data-gallery="portfolioGallery" className="portfolio-lightbox preview-link" title="App 2"><i className="bx bx-plus"></i></a>
+								<a href={portfolio3} data-gallery="portfolioGallery" className="portfolio-lightbox preview-link" title="App 2"><i className="bx bx-plus"></i></a>
 								<a href="portfolio-details.html" className="details-link" title="More Details"><i className="bx bx-link"></i></a>
 							</div>
 						</div>
 
 						<div className="col-lg-4 col-md-6 portfolio-item filter-card">
-							<div className="portfolio-img"><img src="assets/img/portfolio/portfolio-4.jpg" className="img-fluid" alt="" /></div>
+							<div className="portfolio-img"><img src={portfolio4} className="img-fluid" alt="" /></div>
 							<div className="portfolio-info">
 								<h4>Card 2</h4>
 								<p>Card</p>
-								<a href="assets/img/portfolio/portfolio-4.jpg" data-gallery="portfolioGallery" className="portfolio-lightbox preview-link" title="Card 2"><i className="bx bx-plus"></i></a>
+								<a href={portfolio4} data-gallery="portfolioGallery" className="portfolio-lightbox preview-link" title="Card 2"><i className="bx bx-plus"></i></a>
 								<a href="portfolio-details.html" className="details-link" title="More Details"><i className="bx bx-link"></i></a>
 							</div>
 						</div>
 
 						<div className="col-lg-4 col-md-6 portfolio-item filter-web">
-							<div className="portfolio-img"><img src="assets/img/portfolio/portfolio-5.jpg" className="img-fluid" alt="" /></div>
+							<div className="portfolio-img"><img src={portfolio5} className="img-fluid" alt="" /></div>
 							<div className="portfolio-info">
 								<h4>Web 2</h4>
 								<p>Web</p>
-								<a href="assets/img/portfolio/portfolio-5.jpg" data-gallery="portfolioGallery" className="portfolio-lightbox preview-link" title="Web 2"><i className="bx bx-plus"></i></a>
+								<a href={portfolio5} data-gallery="portfolioGallery" className="portfolio-lightbox preview-link" title="Web 2"><i className="bx bx-plus"></i></a>
 								<a href="portfolio-details.html" className="details-link" title="More Details"><i className="bx bx-link"></i></a>
 							</div>
 						</div>
 
 						<div className="col-lg-4 col-md-6 portfolio-item filter-app">
-							<div className="portfolio-img"><img src="assets/img/portfolio/portfolio-6.jpg" className="img-fluid" alt="" /></div>
+							<div className="portfolio-img"><img src={portfolio6} className="img-fluid" alt="" /></div>
 							<div className="portfolio-info">
 								<h4>App 3</h4>
 								<p>App</p>
-								<a href="assets/img/portfolio/portfolio-6.jpg" data-gallery="portfolioGallery" className="portfolio-lightbox preview-link" title="App 3"><i className="bx bx-plus"></i></a>
+								<a href={portfolio6} data-gallery="portfolioGallery" className="portfolio-lightbox preview-link" title="App 3"><i className="bx bx-plus"></i></a>
 								<a href="portfolio-details.html" className="details-link" title="More Details"><i className="bx bx-link"></i></a>
 							</div>
 						</div>
 
 						<div className="col-lg-4 col-md-6 portfolio-item filter-card">
-							<div className="portfolio-img"><img src="assets/img/portfolio/portfolio-7.jpg" className="img-fluid" alt="" /></div>
+							<div className="portfolio-img"><img src={portfolio7} className="img-fluid" alt="" /></div>
 							<div className="portfolio-info">
 								<h4>Card 1</h4>
 								<p>Card</p>
-								<a href="assets/img/portfolio/portfolio-7.jpg" data-gallery="portfolioGallery" className="portfolio-lightbox preview-link" title="Card 1"><i className="bx bx-plus"></i></a>
+								<a href={portfolio7} data-gallery="portfolioGallery" className="portfolio-lightbox preview-link" title="Card 1"><i className="bx bx-plus"></i></a>
 								<a href="portfolio-details.html" className="details-link" title="More Details"><i className="bx bx-link"></i></a>
 							</div>
 						</div>
 
 						<div className="col-lg-4 col-md-6 portfolio-item filter-card">
-							<div className="portfolio-img"><img src="assets/img/portfolio/portfolio-8.jpg" className="img-fluid" alt="" /></div>
+							<div className="portfolio-img"><img src={portfolio8} className="img-fluid" alt="" /></div>
 							<div className="portfolio-info">
 								<h4>Card 3</h4>
 								<p>Card</p>
-								<a href="assets/img/portfolio/portfolio-8.jpg" data-gallery="portfolioGallery" className="portfolio-lightbox preview-link" title="Card 3"><i className="bx bx-plus"></i></a>
+								<a href={portfolio8} data-gallery="portfolioGallery" className="portfolio-lightbox preview-link" title="Card 3"><i className="bx bx-plus"></i></a>
 								<a href="portfolio-details.html" className="details-link" title="More Details"><i className="bx bx-link"></i></a>
 							</div>
 						</div>
 
 						<div className="col-lg-4 col-md-6 portfolio-item filter-web">
-							<div className="portfolio-img"><img src="assets/img/portfolio/portfolio-9.jpg" className="img-fluid" alt="" /></div>
+							<div className="portfolio-img"><img src={portfolio9} className="img-fluid" alt="" /></div>
 							<div className="portfolio-info">
 								<h4>Web 3</h4>
 								<p>Web</p>
-								<a href="assets/img/portfolio/portfolio-9.jpg" data-gallery="portfolioGallery" className="portfolio-lightbox preview-link" title="Web 3"><i className="bx bx-plus"></i></a>
+								<a href={portfolio9} data-gallery="portfolioGallery" className="portfolio-lightbox preview-link" title="Web 3"><i className="bx bx-plus"></i></a>
 								<a href="portfolio-details.html" className="details-link" title="More Details"><i className="bx bx-link"></i></a>
 							</div>
 						</div>
@@ -467,7 +505,7 @@ const Basic = () => {
 										Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
 										<i className="bx bxs-quote-alt-right quote-icon-right"></i>
 									</p>
-									<img src="assets/img/testimonials/testimonials-1.jpg" className="testimonial-img" alt="" />
+									<img src={testimonials1} className="testimonial-img" alt="" />
 									<h3>Saul Goodman</h3>
 									<h4>Ceo &amp; Founder</h4>
 								</div>
@@ -480,7 +518,7 @@ const Basic = () => {
 										Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
 										<i className="bx bxs-quote-alt-right quote-icon-right"></i>
 									</p>
-									<img src="assets/img/testimonials/testimonials-2.jpg" className="testimonial-img" alt="" />
+									<img src={testimonials2} className="testimonial-img" alt="" />
 									<h3>Sara Wilsson</h3>
 									<h4>Designer</h4>
 								</div>
@@ -493,7 +531,7 @@ const Basic = () => {
 										Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
 										<i className="bx bxs-quote-alt-right quote-icon-right"></i>
 									</p>
-									<img src="assets/img/testimonials/testimonials-3.jpg" className="testimonial-img" alt="" />
+									<img src={testimonials3} className="testimonial-img" alt="" />
 									<h3>Jena Karlis</h3>
 									<h4>Store Owner</h4>
 								</div>
@@ -506,7 +544,7 @@ const Basic = () => {
 										Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
 										<i className="bx bxs-quote-alt-right quote-icon-right"></i>
 									</p>
-									<img src="assets/img/testimonials/testimonials-4.jpg" className="testimonial-img" alt="" />
+									<img src={testimonials4} className="testimonial-img" alt="" />
 									<h3>Matt Brandon</h3>
 									<h4>Freelancer</h4>
 								</div>
@@ -519,7 +557,7 @@ const Basic = () => {
 										Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
 										<i className="bx bxs-quote-alt-right quote-icon-right"></i>
 									</p>
-									<img src="assets/img/testimonials/testimonials-5.jpg" className="testimonial-img" alt="" />
+									<img src={testimonials5} className="testimonial-img" alt="" />
 									<h3>John Larson</h3>
 									<h4>Entrepreneur</h4>
 								</div>
@@ -545,7 +583,7 @@ const Basic = () => {
 						<div className="col-lg-3 col-md-6">
 							<div className="box" data-aos="zoom-in">
 								<h3>Free</h3>
-								<h4><sup>$</sup>0<span> / month</span></h4>
+								<h4><sup>Rs</sup>0<span> / month</span></h4>
 								<ul>
 									<li>Aida dere</li>
 									<li>Nec feugiat nisl</li>
@@ -562,7 +600,7 @@ const Basic = () => {
 						<div className="col-lg-3 col-md-6 mt-4 mt-md-0">
 							<div className="box featured" data-aos="zoom-in" data-aos-delay="100">
 								<h3>Business</h3>
-								<h4><sup>$</sup>19<span> / month</span></h4>
+								<h4><sup>Rs</sup>199<span> / month</span></h4>
 								<ul>
 									<li>Aida dere</li>
 									<li>Nec feugiat nisl</li>
@@ -579,7 +617,7 @@ const Basic = () => {
 						<div className="col-lg-3 col-md-6 mt-4 mt-lg-0">
 							<div className="box" data-aos="zoom-in" data-aos-delay="200">
 								<h3>Developer</h3>
-								<h4><sup>$</sup>29<span> / month</span></h4>
+								<h4><sup>Rs</sup>299<span> / month</span></h4>
 								<ul>
 									<li>Aida dere</li>
 									<li>Nec feugiat nisl</li>
@@ -597,7 +635,7 @@ const Basic = () => {
 							<div className="box" data-aos="zoom-in" data-aos-delay="300">
 								<span className="advanced">Advanced</span>
 								<h3>Ultimate</h3>
-								<h4><sup>$</sup>49<span> / month</span></h4>
+								<h4><sup>Rs</sup>499<span> / month</span></h4>
 								<ul>
 									<li>Aida dere</li>
 									<li>Nec feugiat nisl</li>
@@ -698,7 +736,7 @@ const Basic = () => {
 						<div className="col-lg-3 col-md-6 d-flex align-items-stretch">
 							<div className="member" data-aos="fade-up">
 								<div className="member-img">
-									<img src="assets/img/team/team-1.jpg" className="img-fluid" alt="" />
+									<img src={team1} className="img-fluid" alt="" />
 									<div className="social">
 										<a href=""><i className="bi bi-twitter"></i></a>
 										<a href=""><i className="bi bi-facebook"></i></a>
@@ -716,7 +754,7 @@ const Basic = () => {
 						<div className="col-lg-3 col-md-6 d-flex align-items-stretch">
 							<div className="member" data-aos="fade-up" data-aos-delay="100">
 								<div className="member-img">
-									<img src="assets/img/team/team-2.jpg" className="img-fluid" alt="" />
+									<img src={team2} className="img-fluid" alt="" />
 									<div className="social">
 										<a href=""><i className="bi bi-twitter"></i></a>
 										<a href=""><i className="bi bi-facebook"></i></a>
@@ -734,7 +772,7 @@ const Basic = () => {
 						<div className="col-lg-3 col-md-6 d-flex align-items-stretch">
 							<div className="member" data-aos="fade-up" data-aos-delay="200">
 								<div className="member-img">
-									<img src="assets/img/team/team-3.jpg" className="img-fluid" alt="" />
+									<img src={team3} className="img-fluid" alt="" />
 									<div className="social">
 										<a href=""><i className="bi bi-twitter"></i></a>
 										<a href=""><i className="bi bi-facebook"></i></a>
@@ -752,7 +790,7 @@ const Basic = () => {
 						<div className="col-lg-3 col-md-6 d-flex align-items-stretch">
 							<div className="member" data-aos="fade-up" data-aos-delay="300">
 								<div className="member-img">
-									<img src="assets/img/team/team-4.jpg" className="img-fluid" alt="" />
+									<img src={team4} className="img-fluid" alt="" />
 									<div className="social">
 										<a href=""><i className="bi bi-twitter"></i></a>
 										<a href=""><i className="bi bi-facebook"></i></a>
@@ -787,7 +825,7 @@ const Basic = () => {
 								<div className="address">
 									<i className="bi bi-geo-alt"></i>
 									<h4>Location:</h4>
-									<p>A108 Adam Street, New York, NY 535022</p>
+									<p>A108 satelite, India, 380052</p>
 								</div>
 
 								<div className="email">
@@ -799,7 +837,7 @@ const Basic = () => {
 								<div className="phone">
 									<i className="bi bi-phone"></i>
 									<h4>Call:</h4>
-									<p>+1 5589 55488 55s</p>
+									<p>+91 7227885771</p>
 								</div>
 
 							</div>
