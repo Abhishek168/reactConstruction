@@ -883,10 +883,10 @@ const Basic = () => {
 				<h3>Selecao</h3>
 				<p>Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni eligendi fuga maxime saepe commodi placeat.</p>
 				<div className="social-links">
-					<a href="#" className="linkedin"><i className="fa fa-linkedin" aria-hidden="true"></i></a>
+					<a href="https://www.linkedin.com/in/abhibhavsar/" className="linkedin"><i className="fa fa-linkedin" aria-hidden="true"></i></a>
 					<a href="https://www.instagram.com/i.am_abhiii/" className="instagram"><i className="fa fa-instagram" aria-hidden="true"></i></a>
 					<a href="#" className="twitter"><i className="fa fa-twitter" aria-hidden="true"></i></a>
-					<a href="#" className="facebook"><i className="fa fa-facebook" aria-hidden="true"></i></a>
+					<a href="https://www.facebook.com/abhishek.bhavsar.5245/" className="facebook"><i className="fa fa-facebook" aria-hidden="true"></i></a>
 					<a href="#" className="google-plus"><i className="fa fa-skype" aria-hidden="true"></i></a>
 				</div>
 				<div className="copyright">
